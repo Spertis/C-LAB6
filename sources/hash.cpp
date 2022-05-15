@@ -1,19 +1,20 @@
-// Copyright by Enigma
+// Copyright by Spertis
 
 #include "hash.hpp"
 
 void SetUpLogging() {
     auto TraceFileLogger = boost::log::add_file_log(
             boost::log::keywords::file_name =
-                    "/home/enigma/twinLabs/c++ developer/lab6/logs/"
+                    "/home/spertis/Desktop/labC++/lab6/logs/"
                     "TraceLog_%N.log",
             boost::log::keywords::rotation_size = 10 * 1024 * 1024,
             boost::log::keywords::format =
                     "[%TimeStamp%][%Severity%][%ThreadID%]: %Message%");
     auto InfoFileLogger = boost::log::add_file_log(
             boost::log::keywords::file_name =
-                    "/home/enigma/twinLabs/c++ developer/lab6/logs/"
-                    "TraceLog_%N.log",
+                    "/home/spertis/Desktop/labC++/lab6/logs/"
+                    "InfoLog_%N.log",
+            boost::log::keywords::rotation_size = 10 * 1024 * 1024,
             boost::log::keywords::format =
                     "[%TimeStamp%][%Severity%][%ThreadID%]: %Message%");
     auto consoleLogger = boost::log::add_console_log(
@@ -25,7 +26,7 @@ void SetUpLogging() {
     InfoFileLogger->set_filter(boost::log::trivial::severity ==
                                boost::log::trivial::info);
     consoleLogger->set_filter(boost::log::trivial::severity ==
-                              boost::log::trivial::info);
+                              boost::log::trivial::trace);
 }
 void JsonFiler::NewElement(const std::string& randString,
                            const std::string& hash,
