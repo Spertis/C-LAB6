@@ -45,8 +45,7 @@ add_executable(tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
         )
 add_executable(demo
-        ${CMAKE_CURRENT_SOURCE_DIR}/demo/main.cpp
-        include/picosha2.h)
+        include/picosha2.h demo/main.cpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
         "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"

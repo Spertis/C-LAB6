@@ -1,4 +1,4 @@
-// Copyright by Enigma
+// Copyright by Spertis
 
 #include "picosha2.h"
 #include "hash.hpp"
